@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.urls import reverse
 
 
 class Event(models.Model):
@@ -11,6 +12,8 @@ class Event(models.Model):
     date = models.DateField(auto_now=False, verbose_name='Дата проведения')
     time = models.TimeField(verbose_name='Время проведения')
     max_participants = models.IntegerField(verbose_name='Максимальное количество участников')
+    bg_image = models.ImageField(upload_to='media/event_images/%Y/%m/%d/', verbose_name='Картинка мероприятия',
+                                 blank=True)
 
     class Meta:
         verbose_name = 'Мероприятие'
@@ -19,6 +22,11 @@ class Event(models.Model):
 
     def __str__(self):
         return self.title
+
+    def get_absolute_url(self):
+        return reverse('events:event_detail', args=[
+            self.pk
+        ])
 
 
 class Booking(models.Model):

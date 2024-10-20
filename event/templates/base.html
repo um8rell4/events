@@ -1,4 +1,3 @@
-{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,10 +6,55 @@
     {% load django_bootstrap5 %}
     {% bootstrap_css %}
     {% bootstrap_javascript %}
-    <title>{% block title %} {% endblock %}</title>
+    <title>{% block title %}Default title{% endblock title %}</title>
+    <style>
+         body {
+            background-color: white;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Стиль для блоков */
+        .info-block {
+            width: 85%; /* Ширина блока 85% */
+            background-color: rgba(255, 255, 255, 0.9); /* Полупрозрачный белый фон для контента */
+            margin: 20px auto; /* Выравнивание по центру */
+            padding: 20px;
+            border-radius: 10px;
+            position: relative;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Задний фон блока */
+        .info-block::before {
+            content: '';
+            background-image: url('/media/event_images/2024/10/20/1683553302_2044958_import-url.png');
+            background-size: cover;
+            background-position: center;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0; /* Фон за текстом */
+            opacity: 0.3; /* Полупрозрачный задний фон для блока */
+            border-radius: 10px;
+        }
+
+        .info-block h2, .info-block p, .info-block button {
+            position: relative;
+            z-index: 1; /* Текст поверх фоновой картинки */
+        }
+    </style>
 </head>
 <body>
 {% include "include/navbar.html" %}
-{% block content %} {% endblock %}
+{% block content %}
+
+{% endblock content %}
+
 </body>
 </html>

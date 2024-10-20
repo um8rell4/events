@@ -8,7 +8,7 @@ class UserProfile(models.Model):
 
     profile_picture = models.ImageField(
         default='default.jpg',
-        upload_to='profile_images',
+        upload_to='media/profile_images',
         verbose_name='Картинка пролфиля'
     )
     is_organizer = models.BooleanField(blank=True, verbose_name='Организатор')
