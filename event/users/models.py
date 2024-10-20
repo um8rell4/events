@@ -20,7 +20,7 @@ class UserProfile(models.Model):
         verbose_name_plural = 'Профили'
 
     def __str__(self):
-        return self.user.username
+        return self.first_name
 
     def save(self, *args, **kwargs):
         super().save(*args, **kwargs)
