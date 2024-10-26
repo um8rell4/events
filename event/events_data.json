@@ -26,6 +26,58 @@
   }
 },
 {
+  "model": "admin.logentry",
+  "pk": 3,
+  "fields": {
+    "action_time": "2024-10-25T00:42:24.582Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "3",
+    "object_repr": "",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 4,
+  "fields": {
+    "action_time": "2024-10-25T00:53:56.027Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "3",
+    "object_repr": "Архип",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"\\u0418\\u043c\\u044f\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 5,
+  "fields": {
+    "action_time": "2024-10-25T01:17:56.049Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "8",
+    "object_repr": "Поход в кинотеатр",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 6,
+  "fields": {
+    "action_time": "2024-10-25T17:56:00.715Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "11",
+    "object_repr": "Titlul",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"\\u041a\\u0430\\u0440\\u0442\\u0438\\u043d\\u043a\\u0430 \\u043c\\u0435\\u0440\\u043e\\u043f\\u0440\\u0438\\u044f\\u0442\\u0438\\u044f\"]}}]"
+  }
+},
+{
   "model": "auth.permission",
   "pk": 1,
   "fields": {
@@ -390,7 +442,7 @@
   "pk": 1,
   "fields": {
     "password": "pbkdf2_sha256$870000$CaF0uzY2JhUitGJv6dF2OR$EaoU0TDcJVIqAmrxMGAHztg9Szf8PDoueF4quDQ5mJ8=",
-    "last_login": "2024-10-20T09:03:35.328Z",
+    "last_login": "2024-10-25T16:57:38.581Z",
     "is_superuser": true,
     "username": "admin",
     "first_name": "",
@@ -485,38 +537,49 @@
 },
 {
   "model": "sessions.session",
-  "pk": "k33cfolaj8pygi6j208ukbdlm6t8361m",
+  "pk": "vpiqmxs9reanrhvq86dztyb24q5rxbnu",
   "fields": {
-    "session_data": ".eJxVjMEOwiAQRP-FsyGVXQr16N1vIAu7SNXQpLQn47_bJj3ocea9mbcKtC4lrE3mMLK6qLM6_XaR0lPqDvhB9T7pNNVlHqPeFX3Qpm8Ty-t6uH8HhVrZ1gazuGzBOIkMMdtshAfoUkLwW_BeEF2fCS1RP1gADxwBhXzqBFl9vvNTOEI:1t2RqZ:lWUtZqeCmlXyYfAIAU8q3Kf3y-RNtNdKmvug_TrmHoE",
-    "expire_date": "2024-11-03T09:03:35.343Z"
+    "session_data": ".eJxVjMEOwiAQRP-FsyGVXQr16N1vIAu7SNXQpLQn47_bJj3ocea9mbcKtC4lrE3mMLK6qLM6_XaR0lPqDvhB9T7pNNVlHqPeFX3Qpm8Ty-t6uH8HhVrZ1gazuGzBOIkMMdtshAfoUkLwW_BeEF2fCS1RP1gADxwBhXzqBFl9vvNTOEI:1t4Nd4:zPetIyh4T10SfO6nicwm1ake1obkId--EQ26pq6vQ_Q",
+    "expire_date": "2024-11-08T16:57:38.584Z"
   }
 },
 {
   "model": "events.event",
-  "pk": 1,
+  "pk": 10,
   "fields": {
-    "organizer": 1,
-    "title": "Поход",
-    "description": "Описание похода придумывать не хочу, но напишу что-то, чтобы все думали, что это офигеть какое описание.",
+    "organizer": 3,
+    "title": "Поход в кинотеатр!",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sodales, enim eu accumsan molestie, dolor justo lobortis ligula, vitae hendrerit arcu est sit amet quam. Maecenas egestas justo ut lectus lobortis, at rutrum justo euismod. Etiam fermentum facilisis euismod. In vel massa ac quam pharetra sodales tempor ullamcorper lectus. Aliquam erat volutpat. Nullam a lobortis nisi. Nullam ac mauris risus. Cras ultricies ante non lorem varius commodo. Fusce gravida justo ac ornare porta. Pellentesque scelerisque in risus sit amet ultricies. Aenean at commodo elit, at feugiat mi. In varius eleifend turpis, sed varius erat sagittis et. Phasellus vel lectus quis eros vehicula facilisis vitae non diam.\r\n\r\nInteger id facilisis metus. Nulla pharetra, quam vitae accumsan molestie, felis diam placerat sapien, vel tristique tortor velit et metus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Morbi vitae tristique magna. Quisque consectetur diam at tu",
     "location": "Москва, г.Зеленоград",
-    "date": "2024-10-26",
-    "time": "14:00:00",
-    "max_participants": 10,
-    "bg_image": ""
-  }
-},
-{
-  "model": "events.event",
-  "pk": 2,
-  "fields": {
-    "organizer": 1,
-    "title": "Просмотр кино",
-    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
-    "location": "Москва, г.Зеленоград",
-    "date": "2024-10-29",
+    "date": "2026-09-26",
     "time": "15:00:00",
-    "max_participants": 10,
-    "bg_image": "event_images/2024/10/20/1683553302_2044958_import-url.png"
+    "max_participants": 213,
+    "bg_image": "event_images/301d336640499c9ee4dfc6b91db35485_gqWULsU.jpg"
+  }
+},
+{
+  "model": "events.event",
+  "pk": 11,
+  "fields": {
+    "organizer": 3,
+    "title": "Titlul",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sodales, enim eu accumsan molestie, dolor justo lobortis ligula, vitae hendrerit arcu est sit amet quam. Maecenas egestas justo ut lectus lobortis, at rutrum justo euismod. Etiam fermentum facilisis euismod. In vel massa ac quam pharetra sodales tempor ullamcorper lectus. Aliquam erat volutpat. Nullam a lobortis nisi. Nullam ac mauris risus. Cras ultricies ante non lorem varius commodo. Fusce gravida justo ac ornare porta. Pellentesque scelerisque in risus sit amet ultricies. Aenean at commodo elit, at feugiat mi. In varius eleifend turpis, sed varius erat sagittis et. Phasellus vel lectus quis eros vehicula facilisis vitae non diam.\r\n\r\nInteger id facilisis metus. Nulla pharetra, quam vitae accumsan molestie, felis diam placerat sapien, vel tristique tortor velit et metus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Morbi vitae tristique magna.",
+    "location": "Unknown",
+    "date": "2024-12-31",
+    "time": "15:00:00",
+    "max_participants": 12,
+    "bg_image": "event_images/WarRobots_sample.jpg"
+  }
+},
+{
+  "model": "users.userprofile",
+  "pk": 3,
+  "fields": {
+    "user": 1,
+    "profile_picture": "profile_images/default.jpg",
+    "is_organizer": true,
+    "bio": "",
+    "first_name": "Архип"
   }
 }
 ]

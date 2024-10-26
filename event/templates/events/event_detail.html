@@ -1,37 +1,45 @@
 {% extends 'base.html' %}
 {% block content %}
 <style>
-        .event-image {
-            width: 100%;
-            height: 400px;
-            object-fit: cover;
-            border-radius: 10px;
-            margin-bottom: 20px;
-        }
-        .event-info {
-            background-color: #f8f9fa;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            margin-top: 20px;
-        }
-        .organizer-info {
-            display: flex;
-            align-items: center;
-            margin-top: 20px;
-        }
-        .organizer-info img {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            margin-right: 15px;
-        }
-    </style>
+    .event-image {
+        width: 100%;
+        height: 400px;
+        object-fit: cover;
+        border-radius: 10px;
+        margin-bottom: 20px;
+    }
+    .event-info {
+        background-color: #f8f9fa;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        margin-top: 20px;
+        position: relative;  /* Для фиксированного позиционирования кнопок */
+    }
+    .organizer-info {
+        display: flex;
+        align-items: center;
+        margin-top: 20px;
+    }
+    .organizer-info img {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        margin-right: 15px;
+    }
+    .action-buttons {
+        position: absolute;
+        bottom: 20px;
+        right: 20px;
+    }
+</style>
+
 <div class="container mt-5">
     <!-- Картинка мероприятия -->
     {% if event.bg_image %}
     <img src="{{ event.bg_image.url }}" alt="Event Image" class="event-image">
     {% endif %}
+
     <!-- Блок с информацией о мероприятии -->
     <div class="event-info">
         <h1 class="mb-3">{{ event.title }}</h1>
@@ -39,24 +47,54 @@
 
         <div class="row mt-4">
             <div class="col-md-6">
-                <p><strong>Location:</strong>{{ event.location }}</p>
+                <p><strong>Location: </strong>{{ event.location }}</p>
                 <p><strong>Date:</strong> {{ event.date|date:"F j, Y" }}</p>
                 <p><strong>Time:</strong> {{ event.time|date:"H:i"}}</p>
             </div>
             <div class="col-md-6">
                 <p><strong>Max Participants:</strong>{{ event.max_participants }}</p>
-                <p><strong>Organizer:</strong> {{ event.organizer.username }}</p>
+                <p><strong>Organizer:</strong> {{ event.organizer.user.username }}</p>
             </div>
         </div>
 
         <!-- Информация об организаторе -->
         <div class="organizer-info">
-            <img src="https://source.unsplash.com/80x80/?organizer" alt="Organizer Image">
+            <img src="{{ event.organizer.profile_picture.url }}" alt="Organizer Image">
             <div>
                 <p><strong>Organized by:</strong> {{ event.organizer.first_name }}</p>
                 <p><em>Founder & Lead Guide at Nature Tours Inc.</em></p>
             </div>
         </div>
+
+        <!-- Кнопки "Edit" и "Delete", доступные только организатору -->
+        {% if event.organizer.user == user %}
+        <div class="action-buttons">
+            <a href="{% url 'events:edit_event' event.pk%}" class="btn btn-secondary me-2">Edit</a>
+            <a href="{% url 'events:delete_event' event.pk %}" class="btn btn-danger">Delete</a>
+        </div>
+        {% endif %}
+        <!-- Кнопки Запсаться и Отменить запись, только для авторизванных пользователей != организатор -->
+        <div class="container mt-5">
+    <!-- Информация о мероприятии, как в предыдущем коде... -->
+
+    <!-- Кнопка регистрации -->
+    {% if user.is_authenticated and user != event.organizer.user %}
+        {% if event.booking_set.filter(user=user).exists %}
+            <!-- Пользователь уже зарегистрирован -->
+            <form action="{% url 'events:toggle_booking' event.id %}" method="post">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-secondary mt-4">Отменить запись</button>
+            </form>
+        {% else %}
+            <!-- Пользователь не зарегистрирован -->
+            <form action="{% url 'events:toggle_booking' event.id %}" method="post">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-primary mt-4">Записаться</button>
+            </form>
+        {% endif %}
+    {% endif %}
+</div>
+{% endblock %}
     </div>
 </div>
 {% endblock %}

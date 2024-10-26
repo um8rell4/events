@@ -7,13 +7,13 @@ class UserProfile(models.Model):
     user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
 
     profile_picture = models.ImageField(
-        default='default.jpg',
+        default='profile_images/default.jpg',
         upload_to='media/profile_images',
         verbose_name='Картинка пролфиля'
     )
     is_organizer = models.BooleanField(blank=True, verbose_name='Организатор')
-    bio = models.TextField(max_length=250, verbose_name='Описание профиля')
-    first_name = models.CharField(max_length=25, verbose_name='Имя')
+    bio = models.TextField(max_length=250, verbose_name='Описание профиля', blank=True)
+    first_name = models.CharField(max_length=25, verbose_name='Имя', blank=True)
 
     class Meta:
         verbose_name = 'Профиль'
@@ -25,9 +25,9 @@ class UserProfile(models.Model):
     def save(self, *args, **kwargs):
         super().save(*args, **kwargs)
 
-        img = Image.open(self.avatar.path)
+        img = Image.open(self.profile_picture.path)
 
         if img.height > 100 or img.width > 100:
             new_img = (100, 100)
             img.thumbnail(new_img)
-            img.save(self.avatar.path)
+            img.save(self.profile_picture.path)

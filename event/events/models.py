@@ -1,24 +1,25 @@
 from django.db import models
 from django.contrib.auth.models import User
+from users.models import UserProfile
 from django.urls import reverse
 
 
 class Event(models.Model):
-    organizer = models.ForeignKey(User, on_delete=models.CASCADE)
+    organizer = models.ForeignKey(UserProfile, on_delete=models.CASCADE)
 
     title = models.CharField(max_length=40, verbose_name='Название ивента')
-    description = models.TextField(max_length=1000, verbose_name='Описание ивентов')
+    description = models.TextField(max_length=1000, verbose_name='Описание ивентa')
     location = models.CharField(max_length=100, verbose_name='Расположение')
     date = models.DateField(auto_now=False, verbose_name='Дата проведения')
     time = models.TimeField(verbose_name='Время проведения')
     max_participants = models.IntegerField(verbose_name='Максимальное количество участников')
-    bg_image = models.ImageField(upload_to='media/event_images/%Y/%m/%d/', verbose_name='Картинка мероприятия',
-                                 blank=True)
+    bg_image = models.ImageField(upload_to='event_images/', verbose_name='Картинка мероприятия',
+                                 blank=True, null=True)
 
     class Meta:
         verbose_name = 'Мероприятие'
         verbose_name_plural = 'Мероприятия'
-        ordering = ['-date']
+        ordering = ['date']
 
     def __str__(self):
         return self.title
