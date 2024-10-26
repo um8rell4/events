@@ -505,22 +505,6 @@
 },
 {
   "model": "contenttypes.contenttype",
-  "pk": 7,
-  "fields": {
-    "app_label": "events",
-    "model": "booking"
-  }
-},
-{
-  "model": "contenttypes.contenttype",
-  "pk": 8,
-  "fields": {
-    "app_label": "events",
-    "model": "event"
-  }
-},
-{
-  "model": "contenttypes.contenttype",
   "pk": 9,
   "fields": {
     "app_label": "reviews",

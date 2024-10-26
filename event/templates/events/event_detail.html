@@ -65,36 +65,34 @@
                 <p><em>Founder & Lead Guide at Nature Tours Inc.</em></p>
             </div>
         </div>
-
-        <!-- Кнопки "Edit" и "Delete", доступные только организатору -->
-        {% if event.organizer.user == user %}
-        <div class="action-buttons">
-            <a href="{% url 'events:edit_event' event.pk%}" class="btn btn-secondary me-2">Edit</a>
-            <a href="{% url 'events:delete_event' event.pk %}" class="btn btn-danger">Delete</a>
-        </div>
-        {% endif %}
-        <!-- Кнопки Запсаться и Отменить запись, только для авторизванных пользователей != организатор -->
-        <div class="container mt-5">
-    <!-- Информация о мероприятии, как в предыдущем коде... -->
-
-    <!-- Кнопка регистрации -->
-    {% if user.is_authenticated and user != event.organizer.user %}
-        {% if event.booking_set.filter(user=user).exists %}
-            <!-- Пользователь уже зарегистрирован -->
-            <form action="{% url 'events:toggle_booking' event.id %}" method="post">
-                {% csrf_token %}
-                <button type="submit" class="btn btn-secondary mt-4">Отменить запись</button>
-            </form>
+        {% if unregistered %}
         {% else %}
-            <!-- Пользователь не зарегистрирован -->
-            <form action="{% url 'events:toggle_booking' event.id %}" method="post">
+            <!-- Кнопки "Edit" и "Delete", доступные только организатору -->
+            {% if event.organizer.user == user %}
+            <div class="action-buttons">
+                <a href="{% url 'events:edit_event' event.pk%}" class="btn btn-secondary me-2">Edit</a>
+                <a href="{% url 'events:delete_event' event.pk %}" class="btn btn-danger">Delete</a>
+
+            </div>
+            {% endif %}
+
+            <!-- Кнопки Запсаться и Отменить запись, только для авторизванных пользователей != организатор -->
+            <!-- Registration button -->
+            <div class="action-buttons">
+
+                {% if user.is_authenticated and user != event.organizer.user %}
+                <form action="" method="post">
                 {% csrf_token %}
-                <button type="submit" class="btn btn-primary mt-4">Записаться</button>
+                {% if unregistered_person %}
+                    <a href="{% url 'events:toggle_booking' event.pk%}" class="btn btn-danger me-2">Удалить запись</a>
+                {% else %}
+                    <a href="{% url 'events:toggle_booking' event.pk%}" class="btn btn-primary me-2">Записаться</a>
+                {% endif %}
             </form>
         {% endif %}
+        </div>
     {% endif %}
-</div>
-{% endblock %}
     </div>
 </div>
 {% endblock %}
+
