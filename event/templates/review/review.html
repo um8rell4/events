@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container mt-5">
+    <!-- Заголовок страницы -->
+    <h2 class="mb-4">Отзывы о "{{ event.title }}"</h2>
+
+    <!-- Список отзывов -->
+    <div class="reviews-section">
+        <h3 class="mb-3">Отзывы участников</h3>
+
+        {% if reviews %}
+    {% for review in reviews %}
+        <div class="card mb-3">
+            <div class="card-body">
+                <!-- Имя пользователя и рейтинг -->
+                <h5 class="card-title">
+                    {{ review.user.first_name }}
+                    - <span class="text-warning">{{ review.rating }} ★</span>
+                </h5>
+                <!-- Текст отзыва -->
+                <p class="card-text">{{ review.comment }}</p>
+                        <!-- Дата отзыва -->
+                 <p class="text-muted mb-0"><small>Отзыв оставлен {{ review.created_at|date:"d M Y, H:i" }}</small></p>
+            </div>
+        </div>
+    {% endfor %}
+
+        {% else %}
+
+
+
+
+
+
+            <p>Пока нет отзывов. Будьте первым!</p>
+        {% endif %}
+    </div>
+
+    <!-- Форма для добавления отзыва -->
+    <div class="card mb-4">
+        <div class="card-header">
+            Оставить отзыв
+        </div>
+        <div class="card-body">
+            <form method="post">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="rating">{{ form.rating.label }}</label>
+                    {{ form.rating }}
+                </div>
+
+                <div class="form-group mt-3">
+                    <label for="review_text">{{ form.comment.label }}</label>
+                    {{ form.comment }}
+                </div>
+
+                <!-- Кнопка отправки -->
+                <button type="submit" class="btn btn-primary">Отправить отзыв</button>
+            </form>
+        </div>
+    </div>
+
+
+</div>
+{% endblock %}

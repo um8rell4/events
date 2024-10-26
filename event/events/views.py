@@ -26,10 +26,8 @@ def events(request):
 
 def event_detail(request, pk):
     event = get_object_or_404(Event, pk=pk)
-    print(request.user.is_anonymous)
     if request.user.is_anonymous:
-        unregistered = True
-        return render(request, 'events/event_detail.html', {'unregistered': unregistered, 'event': event})
+        return render(request, 'events/event_detail.html', {'event': event})
     unregistered_person = Booking.objects.filter(user=request.user, event=event).exists()
     return render(request, 'events/event_detail.html', {'event': event, 'unregistered_person': unregistered_person})
 
@@ -74,7 +72,6 @@ def event_edit(request, pk):
         form = EventForm(request.POST, request.FILES, instance=event)
         if form.is_valid():
             form.save()
-            print(form.errors)
             return redirect('events:toggle_booking', pk=pk)
     else:
         form = EventForm(instance=event)
