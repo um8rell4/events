@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container mt-5">
+    <div class="event-info">
+    {% if not user_booking_exists %}
+
+        <h2 class="text-center">Вы уверены, что хотите записаться на "{{ event.title }}"?</h2>
+        <form method="post">
+        {% csrf_token %}
+                        <div class="text-center">
+            <button type="submit" class="btn btn-primary">Записаться</button>
+            <a href="{% url 'events:event_detail' event.pk %}" class="btn btn-secondary">Отменить</a>
+            </div>
+
+        </form>
+    {% else %}
+        <h2 class="text-center">Вы уверены, что хотите удалить запись на "{{ event.title }}"?</h2>
+        <form method="post">
+        {% csrf_token %}
+            <div class="text-center">
+            <button type="submit" class="btn btn-danger">Отменить запись</button>
+            <a href="{% url 'events:event_detail' event.pk %}" class="btn btn-secondary">Назад</a>
+                </div>
+        </form>
+    {% endif %}
+        </div>
+</div>
+{% endblock %}
