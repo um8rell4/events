@@ -104,6 +104,123 @@
   }
 },
 {
+  "model": "admin.logentry",
+  "pk": 9,
+  "fields": {
+    "action_time": "2024-10-29T03:58:08.963Z",
+    "user": 2,
+    "content_type": 10,
+    "object_id": "3",
+    "object_repr": "Архип",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"User\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 10,
+  "fields": {
+    "action_time": "2024-10-29T03:59:35.427Z",
+    "user": 2,
+    "content_type": 10,
+    "object_id": "3",
+    "object_repr": "Архип",
+    "action_flag": 2,
+    "change_message": "[]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 11,
+  "fields": {
+    "action_time": "2024-10-29T03:59:59.653Z",
+    "user": 2,
+    "content_type": 10,
+    "object_id": "4",
+    "object_repr": "Дмитрий",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 12,
+  "fields": {
+    "action_time": "2024-10-29T04:00:37.513Z",
+    "user": 2,
+    "content_type": 10,
+    "object_id": "3",
+    "object_repr": "Архип",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"User\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 13,
+  "fields": {
+    "action_time": "2024-10-29T04:00:42.175Z",
+    "user": 2,
+    "content_type": 10,
+    "object_id": "4",
+    "object_repr": "Дмитрий",
+    "action_flag": 2,
+    "change_message": "[]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 14,
+  "fields": {
+    "action_time": "2024-10-29T04:18:26.713Z",
+    "user": 2,
+    "content_type": 10,
+    "object_id": "4",
+    "object_repr": "Дмитрий",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"\\u041e\\u0440\\u0433\\u0430\\u043d\\u0438\\u0437\\u0430\\u0442\\u043e\\u0440\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 15,
+  "fields": {
+    "action_time": "2024-10-29T04:18:36.585Z",
+    "user": 2,
+    "content_type": 10,
+    "object_id": "4",
+    "object_repr": "Дмитрий",
+    "action_flag": 2,
+    "change_message": "[]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 16,
+  "fields": {
+    "action_time": "2024-10-29T04:45:11.904Z",
+    "user": 2,
+    "content_type": 10,
+    "object_id": "4",
+    "object_repr": "Дмитрий",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"\\u041e\\u0440\\u0433\\u0430\\u043d\\u0438\\u0437\\u0430\\u0442\\u043e\\u0440\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 17,
+  "fields": {
+    "action_time": "2024-10-29T04:45:23.099Z",
+    "user": 2,
+    "content_type": 10,
+    "object_id": "4",
+    "object_repr": "Дмитрий",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"\\u041e\\u0440\\u0433\\u0430\\u043d\\u0438\\u0437\\u0430\\u0442\\u043e\\u0440\"]}}]"
+  }
+},
+{
   "model": "auth.permission",
   "pk": 1,
   "fields": {
@@ -539,8 +656,8 @@
   "model": "auth.user",
   "pk": 1,
   "fields": {
-    "password": "pbkdf2_sha256$600000$HBBGLLqOg5nTW1sfxu9OzF$qhfhNhMTAbXQiJamTjeyQdANDWedFxd6jSa1j+1CUs0=",
-    "last_login": "2024-10-26T18:33:46.736Z",
+    "password": "pbkdf2_sha256$870000$OgLBnSs6rhrTylXOrFdsGf$TBj/80ePunVKqUt5LORdNkJhZj2aUhM/bLTRV2QFJHM=",
+    "last_login": "2024-10-29T05:50:02.460Z",
     "is_superuser": true,
     "username": "admin",
     "first_name": "",
@@ -557,8 +674,8 @@
   "model": "auth.user",
   "pk": 2,
   "fields": {
-    "password": "pbkdf2_sha256$600000$ICAH1AOw651bfwoNuxegb7$UyNvcAv0RtxqAXb6MBrEmSLpo8VhUyMzKipPcKaSw48=",
-    "last_login": "2024-10-26T18:13:12.551Z",
+    "password": "pbkdf2_sha256$870000$u8zuJi21Fk5wsyv6eyAOZc$xEk/c+tcMRVuW2wbi1XnfFEMDaWJ/oihBmi7aiKlsTY=",
+    "last_login": "2024-10-29T05:46:11.980Z",
     "is_superuser": false,
     "username": "um8rell4",
     "first_name": "",
@@ -589,14 +706,14 @@
       18,
       19,
       20,
-      29,
-      30,
-      31,
-      32,
       25,
       26,
       27,
       28,
+      29,
+      30,
+      31,
+      32,
       33,
       34,
       35,
@@ -665,7 +782,7 @@
   "pk": 7,
   "fields": {
     "app_label": "events",
-    "model": "event"
+    "model": "booking"
   }
 },
 {
@@ -673,7 +790,7 @@
   "pk": 8,
   "fields": {
     "app_label": "events",
-    "model": "booking"
+    "model": "event"
   }
 },
 {
@@ -694,6 +811,14 @@
 },
 {
   "model": "sessions.session",
+  "pk": "1pcnjakw84bptsamd7ax5el5ht9miq7a",
+  "fields": {
+    "session_data": ".eJxVjMsOwiAQRf-FtSEdoB3GpXu_gQwwSNXQpI-V8d-1SRe6veec-1KBt7WGbZE5jFmdFajT7xY5PaTtIN-53SadprbOY9S7og-66OuU5Xk53L-Dykv91uxd7smItQR9MSglEnSYOxDwBskWweR7kCHZxBg7cg5giJQdIoFX7w_LwTb6:1t5f7C:r4Uwx3RuxH7zYj2mRfHx0-ejbVawtfBsfegEJq_6FVk",
+    "expire_date": "2024-11-12T05:50:02.464Z"
+  }
+},
+{
+  "model": "sessions.session",
   "pk": "de45e4i0ln7cui4clso0usry69wpl32y",
   "fields": {
     "session_data": ".eJxVjMsOwiAQRf-FtSG8UgaX7v0GMgODVA0kpV0Z_12bdKHbe865LxFxW2vcBi9xzuIsjDj9boTpwW0H-Y7t1mXqbV1mkrsiDzrktWd-Xg7376DiqN8aFOrMXhsLObBGN6FiIrSGgSBoz8o4wskW5kQAxrlQMpMFdJZ8Ee8P8QQ4jg:1t4lHk:RWTPcPV_5ZDUo1mOHQtmPQ-3AxVXzDshoCbDoQ0SYh0",
@@ -709,83 +834,28 @@
   }
 },
 {
-  "model": "sessions.session",
-  "pk": "vpiqmxs9reanrhvq86dztyb24q5rxbnu",
-  "fields": {
-    "session_data": ".eJxVjMEOwiAQRP-FsyGVXQr16N1vIAu7SNXQpLQn47_bJj3ocea9mbcKtC4lrE3mMLK6qLM6_XaR0lPqDvhB9T7pNNVlHqPeFX3Qpm8Ty-t6uH8HhVrZ1gazuGzBOIkMMdtshAfoUkLwW_BeEF2fCS1RP1gADxwBhXzqBFl9vvNTOEI:1t4Nd4:zPetIyh4T10SfO6nicwm1ake1obkId--EQ26pq6vQ_Q",
-    "expire_date": "2024-11-08T16:57:38.584Z"
-  }
-},
-{
   "model": "events.event",
-  "pk": 10,
+  "pk": 12,
   "fields": {
     "organizer": 3,
-    "title": "Поход в кинотеатр!",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sodales, enim eu accumsan molestie, dolor justo lobortis ligula, vitae hendrerit arcu est sit amet quam. Maecenas egestas justo ut lectus lobortis, at rutrum justo euismod. Etiam fermentum facilisis euismod. In vel massa ac quam pharetra sodales tempor ullamcorper lectus. Aliquam erat volutpat. Nullam a lobortis nisi. Nullam ac mauris risus. Cras ultricies ante non lorem varius commodo. Fusce gravida justo ac ornare porta. Pellentesque scelerisque in risus sit amet ultricies. Aenean at commodo elit, at feugiat mi. In varius eleifend turpis, sed varius erat sagittis et. Phasellus vel lectus quis eros vehicula facilisis vitae non diam.\r\n\r\nInteger id facilisis metus. Nulla pharetra, quam vitae accumsan molestie, felis diam placerat sapien, vel tristique tortor velit et metus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Morbi vitae tristique magna. Quisque consectetur diam at tu",
+    "title": "Поход в кинотеатр",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque id erat at erat pretium condimentum ac a nisl. Suspendisse eleifend velit urna, id interdum elit rhoncus in. Nullam vitae arcu quis tellus blandit porta. Suspendisse potenti. Sed eget ipsum justo. Morbi eleifend turpis sit amet risus tincidunt vestibulum. Cras malesuada hendrerit massa ac rhoncus. Duis non ipsum vel purus elementum consequat. Maecenas volutpat nunc eu sem luctus rutrum. In hac habitasse platea dictumst. Vivamus vehicula iaculis leo, sed auctor nulla gravida vitae.\r\n\r\nAenean quam lacus, accumsan vulputate varius at, tincidunt venenatis ante. Sed ac pretium felis. Donec justo massa, imperdiet id neque ut, ultricies pulvinar nisi. Nulla scelerisque bibendum augue. Curabitur non quam tristique, placerat tortor nec, feugiat dolor. Sed dictum faucibus fermentum. Donec facilisis accumsan tortor, et varius arcu sollicitudin efficitur. Quisque consectetur non ante et porttitor. Nullam lectus orci, aliquam eget commodo vitae, volutpat vel sapien. Sed bibendum nisi et ante luctus, quis suscipit orci ultricies. Nulla lobortis vehicula viverra. Nunc lectus enim, pulvinar at est vel, semper dignissim tortor.\r\n\r\nMorbi condimentum tincidunt metus a tempus. Integer eu lacus ultrices, blandit augue id, feugiat turpis. Morbi non arcu mollis, vestibulum nisl malesuada, blandit metus. Maecenas feugiat porttitor ex in pellentesque. Aliquam ultrices in lorem vitae fermentum. Sed sollicitudin ac nunc sit amet venenatis. Mauris enim leo, rutrum id interdum eget, commodo vel urna. Donec porttitor arcu imperdiet, dapibus dolor vel, lobortis ex. Aenean at fringilla felis. Maecenas ullamcorper ex mauris, a feugiat est facilisis at.\r\n\r\nCurabitur nec nisl et lorem tempor hendrerit accumsan vel nibh. Nam lobortis suscipit placerat. In hac habitasse platea dictumst. Suspendisse potenti. Sed iaculis placerat urna non viverra. Nullam sit amet neque enim. Fusce euismod turpis sit amet porta convallis. Sed aliquam eros non dignissim sodales. Sed volutpat tellus dui, non laoreet sapien pellentesque eget. Maecenas eu est vestibulum, aliquam elit id, congue nibh. Ut sodales dignissim tortor, tempor sollicitudin nunc sodales et. Morbi hendrerit ultrices semper. Sed est purus, rhoncus non placerat non, auctor ut purus. Aliquam pellentesque leo egestas augue pulvinar, nec vulputate justo tincidunt.\r\n\r\nSed ut ex metus. Integer eget condimentum diam, et suscipit velit. Aliquam erat volutpat. Sed consectetur ipsum at eros cursus faucibus. Vivamus at nibh mattis, consequat magna sit amet, maximus dui. Nulla eget purus purus. Aliquam at tristique est. Mauris eget porta arcu, eu euismod dolor. Maecenas non hendrerit ipsum, tristique tincidunt urna. Fusce at nisl et mi vestibulum aliquam non vel dui. Pellentesque elementum lacinia turpis, in feugiat mauris. Ut diam dolor, lobortis sed tempor ut, semper at dui.",
     "location": "Москва, г.Зеленоград",
-    "date": "2026-09-26",
-    "time": "15:00:00",
-    "max_participants": 213,
-    "bg_image": "event_images/301d336640499c9ee4dfc6b91db35485_gqWULsU.jpg"
-  }
-},
-{
-  "model": "events.event",
-  "pk": 11,
-  "fields": {
-    "organizer": 3,
-    "title": "Titlul",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sodales, enim eu accumsan molestie, dolor justo lobortis ligula, vitae hendrerit arcu est sit amet quam. Maecenas egestas justo ut lectus lobortis, at rutrum justo euismod. Etiam fermentum facilisis euismod. In vel massa ac quam pharetra sodales tempor ullamcorper lectus. Aliquam erat volutpat. Nullam a lobortis nisi. Nullam ac mauris risus. Cras ultricies ante non lorem varius commodo. Fusce gravida justo ac ornare porta. Pellentesque scelerisque in risus sit amet ultricies. Aenean at commodo elit, at feugiat mi. In varius eleifend turpis, sed varius erat sagittis et. Phasellus vel lectus quis eros vehicula facilisis vitae non diam.\r\n\r\nInteger id facilisis metus. Nulla pharetra, quam vitae accumsan molestie, felis diam placerat sapien, vel tristique tortor velit et metus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Morbi vitae tristique magna.",
-    "location": "Unknown",
-    "date": "2024-12-31",
-    "time": "15:00:00",
-    "max_participants": 12,
-    "bg_image": "event_images/WarRobots_sample.jpg"
+    "date": "2025-09-26",
+    "time": "20:30:00",
+    "max_participants": 20,
+    "bg_image": "event_images/1683553302_2044958_import-url_94TyR1P.png"
   }
 },
 {
   "model": "reviews.review",
-  "pk": 1,
+  "pk": 7,
   "fields": {
-    "user": 3,
-    "event": 11,
+    "user": 4,
+    "event": 12,
     "rating": 5.0,
-    "comment": "asdsda",
-    "created_at": "2024-10-26T18:34:28.557Z"
-  }
-},
-{
-  "model": "reviews.review",
-  "pk": 2,
-  "fields": {
-    "user": 3,
-    "event": 11,
-    "rating": 5.0,
-    "comment": "asdsda",
-    "created_at": "2024-10-26T18:36:42.643Z"
-  }
-},
-{
-  "model": "reviews.review",
-  "pk": 3,
-  "fields": {
-    "user": 3,
-    "event": 11,
-    "rating": 4.0,
-    "comment": "sfsdfsd",
-    "created_at": "2024-10-26T18:36:46.159Z"
-  }
-},
-{
-  "model": "reviews.review",
-  "pk": 4,
-  "fields": {
-    "user": 3,
-    "event": 11,
-    "rating": 3.0,
-    "comment": "dsa",
-    "created_at": "2024-10-26T18:36:58.944Z"
+    "comment": "Очень крутое мероприятие, обязательно сходите все!!!!!!",
+    "created_at": "2024-10-29T05:46:47.102Z"
   }
 },
 {
@@ -797,6 +867,17 @@
     "is_organizer": true,
     "bio": "",
     "first_name": "Архип"
+  }
+},
+{
+  "model": "users.userprofile",
+  "pk": 4,
+  "fields": {
+    "user": 2,
+    "profile_picture": "profile_images/default.jpg",
+    "is_organizer": true,
+    "bio": "",
+    "first_name": "Дмитрий"
   }
 }
 ]

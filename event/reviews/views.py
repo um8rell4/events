@@ -1,13 +1,18 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import Review, Event
+from events.models import Booking
 from users.models import UserProfile
 from .forms import ReviewForm
 
 
 def event_reviews(request, pk):
     event = get_object_or_404(Event, pk=pk)
-    reviews = Review.objects.filter(event=event)
-
+    event_review = Review.objects.filter(event=event)
+    if not request.user.is_anonymous:
+        booking_user = Booking.objects.filter(user=request.user, event=event).exists()
+        access = booking_user and request.user != event.organizer
+    else:
+        access = False
     if request.method == 'POST':
         form = ReviewForm(request.POST)
         if form.is_valid():
@@ -22,7 +27,13 @@ def event_reviews(request, pk):
     else:
         form = ReviewForm()
 
-    return render(request, 'review/review.html', {'event': event,
-                                                  'reviews': reviews,
-                                                  'form': form})
+    return render(request, 'review/review_detail.html', {'event': event,
+                                                         'event_review': event_review,
+                                                         'form': form,
+                                                         'access': access})
+
+
+def reviews(request):
+    events_reviews = Review.objects.all()
+    return render(request, 'review/reviews.html', {'reviews': events_reviews})
 # Create your views here.

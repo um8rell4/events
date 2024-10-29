@@ -4,7 +4,7 @@
     <div class="event-info">
     {% if not user_booking_exists %}
 
-        <h2 class="text-center">Вы уверены, что хотите записаться на "{{ event.title }}"?</h2>
+        <h2 class="text-center pt-3">Вы уверены, что хотите записаться на "{{ event.title }}"?</h2>
         <form method="post">
         {% csrf_token %}
                         <div class="text-center">

@@ -6,33 +6,49 @@ from users.models import UserProfile
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 from django.forms.models import model_to_dict
+from reviews.models import Review
+from django.db.models import Avg
 
 
-def index(request):
-    return render(request, 'base.html')
+def is_organizer_context(request):
+    is_organizer = False
+    if request.user.is_authenticated:
+        is_organizer = UserProfile.objects.filter(user=request.user, is_organizer=True).exists()
+    return {
+        'is_organizer': is_organizer
+    }
 
 
 def events(request):
-    elements = Event.objects.all()
-    color = 'red'
+    elements = Event.objects.all().annotate(avg_rating=Avg('review__rating'))
     return render(
         request,
         'events/events.html', {
             'elements': elements,
-            'color': color
         }
     )
 
 
 def event_detail(request, pk):
     event = get_object_or_404(Event, pk=pk)
+    print(event.pk)
+    rating = Review.objects.filter(event=event.pk).aggregate(Avg("rating", default=0))
     if request.user.is_anonymous:
         return render(request, 'events/event_detail.html', {'event': event})
     unregistered_person = Booking.objects.filter(user=request.user, event=event).exists()
-    return render(request, 'events/event_detail.html', {'event': event, 'unregistered_person': unregistered_person})
+    return render(request, 'events/event_detail.html', {'event': event,
+                                                        'unregistered_person': unregistered_person,
+                                                        'rating': rating})
 
 
+@login_required
 def create_event(request):
+
+    is_organizer = UserProfile.objects.filter(user=request.user, is_organizer=True).exists()
+
+    if not is_organizer:
+        return redirect(to='events:events')
+
     if request.method == 'POST':
         form = EventForm(request.POST, request.FILES)
         if form.is_valid():
@@ -66,13 +82,13 @@ def event_edit(request, pk):
     event = get_object_or_404(Event, pk=pk)
 
     if event.organizer.user != request.user:
-        return redirect(to='events:toggle_booking', pk=pk)
+        return redirect(event.get_absolute_url())
 
     if request.method == 'POST':
         form = EventForm(request.POST, request.FILES, instance=event)
         if form.is_valid():
             form.save()
-            return redirect('events:toggle_booking', pk=pk)
+            return redirect(event.get_absolute_url())
     else:
         form = EventForm(instance=event)
 

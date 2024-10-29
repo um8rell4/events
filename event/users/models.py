@@ -11,7 +11,7 @@ class UserProfile(models.Model):
         upload_to='media/profile_images',
         verbose_name='Картинка пролфиля'
     )
-    is_organizer = models.BooleanField(blank=True, verbose_name='Организатор')
+    is_organizer = models.BooleanField(verbose_name='Организатор', default=False)
     bio = models.TextField(max_length=250, verbose_name='Описание профиля', blank=True)
     first_name = models.CharField(max_length=25, verbose_name='Имя', blank=True)
 

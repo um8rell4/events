@@ -48,7 +48,7 @@
     <!-- Блок с информацией о мероприятии -->
     <div class="event-info">
         <div class="event-header">
-            <h1 class="mb-3">{{ event.title }}</h1>
+            <h1 class="mb-3">{{ event.title }} <span class="text-warning">{{ rating.rating__avg }}★</span></h1>
             <!-- Кнопка для перехода на страницу с отзывами -->
             <a href="{% url 'reviews:event_review' event.pk %}" class="btn btn-primary">Отзывы</a>
         </div>
@@ -88,14 +88,13 @@
             <!-- Кнопки Запсаться и Отменить запись, только для авторизованных пользователей != организатор -->
             <div class="action-buttons">
                 {% if user != event.organizer.user %}
-                <form action="{% url 'events:toggle_booking' event.pk %}" method="post">
-                    {% csrf_token %}
+                <a href="{% url 'events:toggle_booking' event.pk %}">
                     {% if unregistered_person %}
                         <button type="submit" class="btn btn-danger me-2">Удалить запись</button>
                     {% else %}
                         <button type="submit" class="btn btn-primary me-2">Записаться</button>
                     {% endif %}
-                </form>
+                </a>
                 {% endif %}
             </div>
         {% endif %}

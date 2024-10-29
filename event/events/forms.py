@@ -17,18 +17,18 @@ class EventForm(forms.ModelForm):
             'title': forms.TextInput(attrs={"class": "form-control"}),
             'description': forms.Textarea(attrs={'class': 'form-control'}),
             'location': forms.TextInput(attrs={"class": "form-control"}),
-            'date': forms.DateInput(attrs={"class": "form-control", "placeholder": "dd-mm-yyyy"}),
-            'time': forms.TimeInput(attrs={"class": "form-control", "placeholder": "чч:мм"}),
+            'date': forms.DateInput(attrs={"class": "form-control", "placeholder": "dd.mm.yyyy", "type": "date"}),
+            'time': forms.TimeInput(attrs={"class": "form-control", "placeholder": "чч:мм", "type": "time"}),
             'max_participants': forms.NumberInput(attrs={"class": "form-control"}),
             'bg_image': forms.FileInput(attrs={"class": "form-control"}),
         }
         date = forms.DateField(
-            widget=forms.DateInput(format='%m-%d-%Y'),
-            input_formats=('%m-%d-%Y', )
+            widget=forms.DateInput(format='%d.%m.%Y'),
+            input_formats=['%d.%m.%Y']
         )
 
         time = forms.TimeField(
             widget=forms.TimeInput(format='%H:%M'),
-            input_formats=('%H:%M', )
+            input_formats=['%H:%M']
         )
 

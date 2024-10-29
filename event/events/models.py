@@ -8,7 +8,7 @@ class Event(models.Model):
     organizer = models.ForeignKey(UserProfile, on_delete=models.CASCADE)
 
     title = models.CharField(max_length=40, verbose_name='Название ивента')
-    description = models.TextField(max_length=1000, verbose_name='Описание ивентa')
+    description = models.TextField(max_length=10000, verbose_name='Описание ивентa')
     location = models.CharField(max_length=100, verbose_name='Расположение')
     date = models.DateField(auto_now=False, verbose_name='Дата проведения')
     time = models.TimeField(verbose_name='Время проведения')
