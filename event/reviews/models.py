@@ -16,7 +16,7 @@ class Review(models.Model):
     ]
 
     user = models.ForeignKey(
-        UserProfile,
+        User,
         on_delete=models.SET_DEFAULT,
         default="Удаленный пользователь",
         verbose_name='Пользователь'

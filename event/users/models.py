@@ -4,7 +4,7 @@ from PIL import Image
 
 
 class UserProfile(models.Model):
-    user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
+    user = models.OneToOneField(User, on_delete=models.SET_NULL, null=True)
 
     profile_picture = models.ImageField(
         default='profile_images/default.jpg',
@@ -13,14 +13,13 @@ class UserProfile(models.Model):
     )
     is_organizer = models.BooleanField(verbose_name='Организатор', default=False)
     bio = models.TextField(max_length=250, verbose_name='Описание профиля', blank=True)
-    first_name = models.CharField(max_length=25, verbose_name='Имя', blank=True)
 
     class Meta:
         verbose_name = 'Профиль'
         verbose_name_plural = 'Профили'
 
     def __str__(self):
-        return self.first_name
+        return self.user.username
 
     def save(self, *args, **kwargs):
         super().save(*args, **kwargs)

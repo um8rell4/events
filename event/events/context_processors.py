@@ -1,4 +1,4 @@
-from .models import UserProfile
+from users.models import UserProfile
 
 
 def user_context(request):

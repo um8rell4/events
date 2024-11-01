@@ -1,0 +1,88 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <style>
+.center-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 70vh;
+}
+
+.form-box {
+    width: 300px;
+    padding: 20px;
+    background-color: #f8f8f8;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+h2 {
+    margin-bottom: 15px;
+    font-size: 24px;
+    color: #333;
+}
+
+.form-group {
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.btn-1 {
+    width: 100%;
+    padding: 10px;
+    background-color: warning;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+
+    </style>
+
+    <div class="center-container">
+        <div class="form-box">
+            <h2>Регистрация</h2>
+            <form method="POST">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label>Никнейм:</label>
+                    {{ form.username }}
+                </div>
+                <div class="form-group">
+                    <label>Ваше имя:</label>
+                    {{ form.first_name }}
+                </div>
+                <div class="form-group">
+                    <label>Пароль:</label>
+                    {{ form.password1 }}
+                </div>
+                <div class="form-group">
+                    <label>Повторите пароль:</label>
+                    {{ form.password2 }}
+                </div>
+                <button type="submit" class="btn-1 btn btn-primary">Зарегистрироваться</button>
+            </form>
+        </div>
+    </div>
+{% endblock %}

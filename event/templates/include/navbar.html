@@ -9,19 +9,38 @@
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="{% url 'reviews:reviews' %}">Отзывы</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{% url 'events:events' %}">About</a>
-        </li>
         {% if is_organizer %}
         <li class="nav-item">
           <a class="nav-link" href="{% url 'events:create_event' %}">Создать</a>
         </li>
         {% endif %}
-        <li class="nav-item">
-          <a class="nav-link" href="#">Contact</a>
-        </li>
       </ul>
-      <button class="btn btn-outline-primary" type="button">Login</button>
+      {% if user.is_authenticated %}
+
+      <div class="dropdown me-3">
+          <a href="#" class="d-flex align-items-center text-decoration-none" data-bs-toggle="dropdown" aria-expanded="false">
+            <!-- Картинка профиля пользователя -->
+            <img
+              src="{{ user.userprofile.profile_picture.url }}"
+              alt="Фото профиля"
+              class="rounded-circle profile-picture"
+              width="40" height="40">
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end">
+            <li><a class="dropdown-item" href="">Просмотр профиля</a></li>
+            <li><a class="dropdown-item" href="">Настройки профиля</a></li>
+            <li><a class="dropdown-item" href="">Записи на мероприятия</a></li>
+          </ul>
+        </div>
+
+        <form action="{% url 'users:logout' %}" method="post">
+          {% csrf_token %}
+          <button onclick="parentNode.submit();" class="btn btn-outline-primary" type="button">Logout</button>
+        </form>
+
+      {% else %}
+        <a href="{% url 'users:login' %}"><button class="btn btn-outline-primary" type="button">Login</button></a>
+      {% endif %}
     </div>
   </div>
 </nav>

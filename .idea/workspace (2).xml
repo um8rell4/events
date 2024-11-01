@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="ae55e202-cd82-48c4-ba90-748deb63817e" name="Changes" comment="Доделал доступы и систему коментариев">
+      <change beforePath="$PROJECT_DIR$/event/events/context_processors.py" beforeDir="false" afterPath="$PROJECT_DIR$/event/events/context_processors.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/event/events/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/event/events/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/event/events/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/event/events/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/event/media/event_images/1683553302_2044958_import-url.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/event/media/event_images/1683553302_2044958_import-url_94TyR1P.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/event/media/event_images/1683553302_2044958_import-url_NWdUqDg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/event/media/event_images/1683553302_2044958_import-url_hyCPsqd.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/event/media/event_images/301d336640499c9ee4dfc6b91db35485.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/event/media/event_images/301d336640499c9ee4dfc6b91db35485_gqWULsU.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/event/media/event_images/WarRobots_sample.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/event/reviews/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/event/reviews/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/event/reviews/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/event/reviews/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/event/reviews/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/event/reviews/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/event/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/event/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/event/templates/events/event_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/event/templates/events/event_detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/event/templates/review/review_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/event/templates/review/review_detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/event/users/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/event/users/models.py" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Merge.Settings">
+    <option name="BRANCH" value="um8rell4" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2ngk4j8bpmzWvdbQQdLH8YuncDE" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\um8re\Desktop\DjangoProjects\events\event\media" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="events" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ae55e202-cd82-48c4-ba90-748deb63817e" name="Changes" comment="" />
+      <created>1729401930028</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1729401930028</updated>
+    </task>
+    <task id="LOCAL-00001" summary="Add project to github">
+      <created>1729402526294</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1729402526294</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Add postgres DB and create datafile events_data.json">
+      <created>1729403354287</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1729403354287</updated>
+    </task>
+    <task id="LOCAL-00003" summary="add superuser">
+      <created>1729408624197</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1729408624197</updated>
+    </task>
+    <task id="LOCAL-00004" summary="add superuser">
+      <created>1729410510557</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1729410510557</updated>
+    </task>
+    <task id="LOCAL-00005" summary="add templates files with base.html">
+      <created>1729410676113</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1729410676113</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Начальное описание Всех моделей каждого приложения">
+      <created>1729414832472</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1729414832472</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Регистрация моделей в админке">
+      <created>1729415432325</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1729415432325</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Доделал до пункта 4.1 включительно">
+      <created>1729434281937</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1729434281937</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Доделал до пункта 4.1 включительно">
+      <created>1729434376844</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1729434376844</updated>
+    </task>
+    <task id="LOCAL-00010" summary="misc.xml">
+      <created>1729793998050</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1729793998050</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Доделал доступы и систему коментариев">
+      <created>1730181300338</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1730181300338</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="um8rell4" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Add project to github" />
+    <MESSAGE value="Add postgres DB and create datafile events_data.json" />
+    <MESSAGE value="add superuser" />
+    <MESSAGE value="add templates files with base.html" />
+    <MESSAGE value="Начальное описание Всех моделей каждого приложения" />
+    <MESSAGE value="Регистрация моделей в админке" />
+    <MESSAGE value="Доделал до пункта 4.1 включительно" />
+    <MESSAGE value="misc.xml" />
+    <MESSAGE value="Доделал доступы и систему коментариев" />
+    <option name="LAST_COMMIT_MESSAGE" value="Доделал доступы и систему коментариев" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/venv/Lib/site-packages/django/forms/__init__.py</url>
+          <line>4</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

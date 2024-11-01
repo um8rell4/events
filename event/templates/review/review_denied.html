@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container mt-5">
+    <div class="event-info">
+        <h2 class="text-center pt-3">Вы уже оставляли комментарий на событие "{{ event.title }}"!</h2>
+            <div class="text-center">
+            <a href="{% url 'reviews:event_review' event.pk %}" class="btn btn-secondary">Вернуться назад</a>
+            </div>
+    </div>
+</div>
+{% endblock %}

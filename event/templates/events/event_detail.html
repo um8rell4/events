@@ -48,7 +48,8 @@
     <!-- Блок с информацией о мероприятии -->
     <div class="event-info">
         <div class="event-header">
-            <h1 class="mb-3">{{ event.title }} <span class="text-warning">{{ rating.rating__avg }}★</span></h1>
+            <h1 class="mb-3">{{ event.title }}
+                <span class="text-warning">{{ rating.rating__avg|floatformat:"1" }}★</span></h1>
             <!-- Кнопка для перехода на страницу с отзывами -->
             <a href="{% url 'reviews:event_review' event.pk %}" class="btn btn-primary">Отзывы</a>
         </div>
@@ -62,14 +63,14 @@
                 <p><strong>Time:</strong> {{ event.time|date:"H:i"}}</p>
             </div>
             <div class="col-md-6">
-                <p><strong>Max Participants:</strong>{{ event.max_participants }}</p>
-                <p><strong>Organizer:</strong> {{ event.organizer.user.username }}</p>
+                <p><strong>Max Participants: </strong>{{ registered_persons }}/{{ event.max_participants }}</p>
+                <p><strong>Organizer:</strong> {{ event.organizer }}</p>
             </div>
         </div>
 
         <!-- Информация об организаторе -->
         <div class="organizer-info">
-            <img src="{{ event.organizer.profile_picture.url }}" alt="Organizer Image">
+            <img src="{{ organizer_profile.profile_picture.url }}" alt="Organizer Image">
             <div>
                 <p><strong>Organized by:</strong> {{ event.organizer.first_name }}</p>
                 <p><em>Founder & Lead Guide at Nature Tours Inc.</em></p>
@@ -78,7 +79,7 @@
 
         {% if user.is_authenticated %}
             <!-- Кнопки "Edit" и "Delete", доступные только организатору -->
-            {% if event.organizer.user == user %}
+            {% if event.organizer == user %}
             <div class="action-buttons">
                 <a href="{% url 'events:edit_event' event.pk %}" class="btn btn-secondary me-2">Edit</a>
                 <a href="{% url 'events:delete_event' event.pk %}" class="btn btn-danger">Delete</a>
@@ -87,14 +88,17 @@
 
             <!-- Кнопки Запсаться и Отменить запись, только для авторизованных пользователей != организатор -->
             <div class="action-buttons">
-                {% if user != event.organizer.user %}
-                <a href="{% url 'events:toggle_booking' event.pk %}">
+                {% if user != event.organizer %}
                     {% if unregistered_person %}
-                        <button type="submit" class="btn btn-danger me-2">Удалить запись</button>
-                    {% else %}
+                        <a href="{% url 'events:toggle_booking' event.pk %}">
+                        <button type="submit" class="btn btn-danger me-2">Отменить запись</button></a>
+                    {% elif not unregistered_person and registered_persons < event.max_participants %}
+                        <a href="{% url 'events:toggle_booking' event.pk %}">
                         <button type="submit" class="btn btn-primary me-2">Записаться</button>
+                        </a>
+                    {% else %}
+                        Места закончились
                     {% endif %}
-                </a>
                 {% endif %}
             </div>
         {% endif %}

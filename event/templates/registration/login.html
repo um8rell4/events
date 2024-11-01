@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+{% block content %}
+<style>
+.auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+        }
+.auth-box {
+    width: 300px;
+    padding: 20px;
+    background-color: #f8f8f8;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+        }
+h2 {
+    margin-bottom: 15px;
+    font-size: 24px;
+    color: #333;
+    }
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+.form-group {
+    margin-bottom: 10px;
+    text-align: left;
+}
+        </style>
+<div class="auth-container">
+    <div class="auth-box">
+        <h2>Title</h2>
+        <form method="post" action="">
+            {% csrf_token %}
+
+            <div class="mb-3 form-group">
+                <label for="" class="form-label">Логин:</label>
+                {{ form.username }}
+            </div>
+
+            <div class="mb-3 form-group">
+                <label for="" class="form-label">Пароль:</label>
+                {{ form.password }}
+            </div>
+
+            <button type="submit" class="btn btn-primary w-100">Войти</button>
+
+        </form>
+        <a href="{% url 'users:signup' %}">Нет аккаунта? Зарегистрируйся</a>
+    </div>
+</div>
+{% endblock %}

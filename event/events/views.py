@@ -10,15 +10,6 @@ from reviews.models import Review
 from django.db.models import Avg
 
 
-def is_organizer_context(request):
-    is_organizer = False
-    if request.user.is_authenticated:
-        is_organizer = UserProfile.objects.filter(user=request.user, is_organizer=True).exists()
-    return {
-        'is_organizer': is_organizer
-    }
-
-
 def events(request):
     elements = Event.objects.all().annotate(avg_rating=Avg('review__rating'))
     return render(
@@ -31,14 +22,23 @@ def events(request):
 
 def event_detail(request, pk):
     event = get_object_or_404(Event, pk=pk)
-    print(event.pk)
+    organizer = get_object_or_404(User, username=event.organizer)
+    organizer_profile = UserProfile.objects.get(user=organizer)
     rating = Review.objects.filter(event=event.pk).aggregate(Avg("rating", default=0))
+    #Количество записанных на мероприятие человек
+
+    registered_persons = Booking.objects.filter(event=event).count()
     if request.user.is_anonymous:
-        return render(request, 'events/event_detail.html', {'event': event})
+        return render(request, 'events/event_detail.html', {'event': event,
+                                                            'rating': rating,
+                                                            'registered_persons': registered_persons,
+                                                            'organizer_profile': organizer_profile})
     unregistered_person = Booking.objects.filter(user=request.user, event=event).exists()
     return render(request, 'events/event_detail.html', {'event': event,
                                                         'unregistered_person': unregistered_person,
-                                                        'rating': rating})
+                                                        'registered_persons': registered_persons,
+                                                        'rating': rating,
+                                                        'organizer_profile': organizer_profile})
 
 
 @login_required
@@ -53,8 +53,7 @@ def create_event(request):
         form = EventForm(request.POST, request.FILES)
         if form.is_valid():
             event = form.save(commit=False)
-            user_profile = UserProfile.objects.get(user=request.user)
-            event.organizer = user_profile
+            event.organizer = request.user
             event.save()
             return redirect(to='events:events')
         else:
@@ -67,7 +66,7 @@ def create_event(request):
 def delete_event(request, pk):
     event = get_object_or_404(Event, pk=pk)
 
-    if event.organizer.user != request.user:
+    if event.organizer != request.user:
         return HttpResponseForbidden("You are not allowed to delete")
 
     if request.method == 'POST':
@@ -81,7 +80,7 @@ def delete_event(request, pk):
 def event_edit(request, pk):
     event = get_object_or_404(Event, pk=pk)
 
-    if event.organizer.user != request.user:
+    if event.organizer != request.user:
         return redirect(event.get_absolute_url())
 
     if request.method == 'POST':
@@ -98,10 +97,12 @@ def event_edit(request, pk):
 @login_required
 def toggle_booking(request, pk):
     event = get_object_or_404(Event, pk=pk)
-    if request.user == event.organizer.user:
+    if request.user == event.organizer:
         return HttpResponseForbidden("You are can not register to this event")
 
     user_booking_exists = Booking.objects.filter(user=request.user, event=event).exists()
+    # Количество записанных на мероприятие человек
+    registered_persons = Booking.objects.filter(event=event).count()
 
     if request.method == "POST":
         if user_booking_exists:
@@ -111,7 +112,8 @@ def toggle_booking(request, pk):
         return redirect(event.get_absolute_url())
 
     return render(request, "events/toggle_booking.html",
-                  {"event": event, "user_booking_exists": user_booking_exists}
+                  {"event": event, "user_booking_exists": user_booking_exists,
+                   "registered_persons": registered_persons}
                   )
 
 #Получить записи брони для данного ивента

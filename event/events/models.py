@@ -1,11 +1,10 @@
 from django.db import models
 from django.contrib.auth.models import User
-from users.models import UserProfile
 from django.urls import reverse
 
 
 class Event(models.Model):
-    organizer = models.ForeignKey(UserProfile, on_delete=models.CASCADE)
+    organizer = models.ForeignKey(User, on_delete=models.CASCADE)
 
     title = models.CharField(max_length=40, verbose_name='Название ивента')
     description = models.TextField(max_length=10000, verbose_name='Описание ивентa')
