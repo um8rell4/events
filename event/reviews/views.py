@@ -12,16 +12,6 @@ def event_reviews(request, pk):
     # Оптимизируем запрос с использованием select_related для извлечения User
     reviews = Review.objects.filter(event=event)
 
-
-
-    # передаем фотографии в reviews
-    reviews_with_photos = []
-    for review in reviews:
-        print(review.user)
-        user_profile = UserProfile.objects.get(user=review.user)
-        reviews_with_photos.append({'review': review,
-                                    'profile_picture': user_profile.profile_picture})
-
     access = False  # Изначально доступ закрыт
 
     if request.user.is_authenticated:
