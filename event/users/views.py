@@ -1,8 +1,10 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.views import generic
 from django.urls import reverse_lazy
-from .forms import SignUpForm, LoginForm
+from .forms import SignUpForm, LoginForm, EditUserForm, EditUserProfileForm
 from django.contrib.auth.views import LoginView
+from django.contrib.auth.models import User
+from django.contrib.auth.decorators import login_required
 
 
 class SignupView(generic.CreateView):
@@ -27,7 +29,7 @@ class SignupView(generic.CreateView):
         if form.is_valid():
             form.save()
             username = form.cleaned_data.get('username')
-            return redirect(to='events:events')
+            return redirect(to='users:login')
 
         return render(request, self.template_name, {'form': form})
 
@@ -35,4 +37,26 @@ class SignupView(generic.CreateView):
 class CustomLogin(LoginView):
     authentication_form = LoginForm
     redirect_authenticated_user = '/'
+
+
+def user_profile(request, username):
+    user = get_object_or_404(User, username=username)
+    return render(request, 'users/user_profile.html', {'user': user})
+
+
+@login_required
+def user_profile_edit(request):
+    if request.method == 'POST':
+        form = EditUserForm(request.POST, instance=request.user)
+        profile_form = EditUserProfileForm(request.POST, request.FILES, instance=request.user.userprofile)
+        if form.is_valid() and profile_form.is_valid():
+            form.save()
+            profile_form.save()
+            return redirect(to='users:user_profile', username=request.user)
+    else:
+        user_form = EditUserForm(instance=request.user)
+        user_profile_form = EditUserProfileForm(instance=request.user)
+
+    return render(request, 'users/user_profile_edit.html', {'user_form': user_form,
+                                                      'user_profile_form': user_profile_form})
 # Create your views here.

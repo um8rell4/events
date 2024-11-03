@@ -16,7 +16,7 @@
 
         <div class="event-header">
             <h2>{{ review.event }} <span class="text-warning">{{ review.rating }} ★</span></h2>
-            <h5>{{ review.user.first_name }} </h5>
+            <a href="{% url 'users:user_profile' review.user.username %}"><h5>{{ review.user.first_name }} </h5></a>
         </div>
 
         <p class="mt-3">{{ review.comment }}</p>
