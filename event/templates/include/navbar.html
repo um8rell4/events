@@ -21,14 +21,14 @@
           <a href="#" class="d-flex align-items-center text-decoration-none" data-bs-toggle="dropdown" aria-expanded="false">
             <!-- Картинка профиля пользователя -->
             <img
-              src="{{ user.userprofile.profile_picture.url }}"
+              src="{{ request.user.userprofile.profile_picture.url }}"
               alt="Фото профиля"
               class="rounded-circle profile-picture"
               width="40" height="40">
           </a>
           <ul class="dropdown-menu dropdown-menu-end">
             <li><a class="dropdown-item" href="{% url 'users:user_profile' request.user %}">Просмотр профиля</a></li>
-            <li><a class="dropdown-item" href="">Настройки профиля</a></li>
+            <li><a class="dropdown-item" href="{% url 'users:user_profile_edit' %}">Настройки профиля</a></li>
             <li><a class="dropdown-item" href="">Записи на мероприятия</a></li>
           </ul>
         </div>

@@ -17,8 +17,8 @@ class Review(models.Model):
 
     user = models.ForeignKey(
         User,
-        on_delete=models.SET_DEFAULT,
-        default="Удаленный пользователь",
+        null=True,
+        on_delete=models.SET_NULL,
         verbose_name='Пользователь'
     )
     event = models.ForeignKey(Event, on_delete=models.CASCADE, verbose_name='Мероприятие')

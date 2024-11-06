@@ -1,27 +1,27 @@
 {% extends 'base.html' %}
 {% block content %}
 <style>
+
     .event-header {
         display: flex;
         justify-content: space-between;
         align-items: center;
     }
+    .profile-picture-comment {
+    width: 50px; /* Задайте нужный размер изображения */
+    height: 50px;
+    object-fit: cover; /* Изображение будет адаптироваться по размеру */
+    border-radius: 50%; /* Делает изображение круглым */
+
 </style>
 
 
 <div class="container">
     <h2 class="text-center">Все отзывы</h2>
+    {% include 'review/includes/review_detail_comment.html' %}
     {% for review in reviews %}
-    <div class="info-block">
 
-        <div class="event-header">
-            <h2>{{ review.event }} <span class="text-warning">{{ review.rating }} ★</span></h2>
-            <a href="{% url 'users:user_profile' review.user.username %}"><h5>{{ review.user.first_name }} </h5></a>
-        </div>
 
-        <p class="mt-3">{{ review.comment }}</p>
-       <p class="text-muted mb-0"><small>Отзыв оставлен {{ review.created_at|date:"d M Y, H:i" }}</small></p>
-    </div>
     {% empty %}
     <h2 class="text-center">Отзывов пока что нет</h2>
  {% endfor %}

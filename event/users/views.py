@@ -54,9 +54,18 @@ def user_profile_edit(request):
             profile_form.save()
             return redirect(to='users:user_profile', username=request.user)
     else:
-        user_form = EditUserForm(instance=request.user)
-        user_profile_form = EditUserProfileForm(instance=request.user)
+        form = EditUserForm(instance=request.user)
+        profile_form = EditUserProfileForm(instance=request.user)
 
-    return render(request, 'users/user_profile_edit.html', {'user_form': user_form,
-                                                      'user_profile_form': user_profile_form})
+    return render(request, 'users/user_profile_edit.html', {'user_form': form,
+                                                            'user_profile_form': profile_form})
+
+
+@login_required
+def delete_profile(request):
+    user = get_object_or_404(User, username=request.user)
+    if request.method == 'POST':
+        user.delete()
+        return redirect(to='users:login')
+    return render(request, 'users/delete_profile.html')
 # Create your views here.

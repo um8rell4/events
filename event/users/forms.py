@@ -2,6 +2,7 @@ from django import forms
 from django.contrib.auth.models import User
 from .models import UserProfile
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
+from django.core.exceptions import ValidationError
 
 
 class SignUpForm(UserCreationForm):
@@ -50,3 +51,9 @@ class EditUserProfileForm(forms.ModelForm):
     class Meta:
         model = UserProfile
         fields = ['bio', 'profile_picture', 'email']
+
+    def clean_email(self):
+        email = self.cleaned_data['email']
+        if UserProfile.objects.filter(email=email).exists():
+            raise ValidationError("Email already exists!")
+        return email

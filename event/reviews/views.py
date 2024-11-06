@@ -91,7 +91,7 @@ def reviews(request):
 
 @login_required
 def review_delete(request, pk, comment_id):
-    profile_user = UserProfile.objects.get(user=request.user)
+
     event = get_object_or_404(Event, pk=pk)  # Указываем модель Event
     comment = get_object_or_404(Review, id=comment_id)
 

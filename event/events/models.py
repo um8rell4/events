@@ -30,7 +30,7 @@ class Event(models.Model):
 
 
 class Booking(models.Model):
-    user = models.ForeignKey(User, on_delete=models.SET_DEFAULT, default='Удаленный пользователь')
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     event = models.ForeignKey(Event, on_delete=models.CASCADE)
 
     status = models.CharField(max_length=20)
