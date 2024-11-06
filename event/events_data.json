@@ -338,6 +338,84 @@
   }
 },
 {
+  "model": "admin.logentry",
+  "pk": 31,
+  "fields": {
+    "action_time": "2024-11-03T08:28:13.832Z",
+    "user": 1,
+    "content_type": 4,
+    "object_id": "6",
+    "object_repr": "admin5",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 32,
+  "fields": {
+    "action_time": "2024-11-03T10:33:39.054Z",
+    "user": 1,
+    "content_type": 4,
+    "object_id": "9",
+    "object_repr": "admin4",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 33,
+  "fields": {
+    "action_time": "2024-11-03T10:38:54.809Z",
+    "user": 1,
+    "content_type": 4,
+    "object_id": "10",
+    "object_repr": "admin4",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 34,
+  "fields": {
+    "action_time": "2024-11-03T10:39:00.559Z",
+    "user": 1,
+    "content_type": 4,
+    "object_id": "8",
+    "object_repr": "admin3",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 35,
+  "fields": {
+    "action_time": "2024-11-03T10:44:33.986Z",
+    "user": 1,
+    "content_type": 4,
+    "object_id": "12",
+    "object_repr": "admin4",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 36,
+  "fields": {
+    "action_time": "2024-11-03T10:44:40.724Z",
+    "user": 1,
+    "content_type": 4,
+    "object_id": "11",
+    "object_repr": "admin3",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
   "model": "auth.permission",
   "pk": 1,
   "fields": {
@@ -774,12 +852,12 @@
   "pk": 1,
   "fields": {
     "password": "pbkdf2_sha256$870000$OgLBnSs6rhrTylXOrFdsGf$TBj/80ePunVKqUt5LORdNkJhZj2aUhM/bLTRV2QFJHM=",
-    "last_login": "2024-10-31T14:22:45.327Z",
+    "last_login": "2024-11-03T10:44:22.662Z",
     "is_superuser": true,
     "username": "admin",
-    "first_name": "Архип",
+    "first_name": "Архипчик",
     "last_name": "",
-    "email": "",
+    "email": "arkhipka27@gmail.com",
     "is_staff": true,
     "is_active": true,
     "date_joined": "2024-10-20T07:13:37Z",
@@ -792,12 +870,12 @@
   "pk": 2,
   "fields": {
     "password": "pbkdf2_sha256$870000$u8zuJi21Fk5wsyv6eyAOZc$xEk/c+tcMRVuW2wbi1XnfFEMDaWJ/oihBmi7aiKlsTY=",
-    "last_login": "2024-11-01T10:46:51.189Z",
+    "last_login": "2024-11-03T09:05:18.958Z",
     "is_superuser": false,
     "username": "um8rell4",
     "first_name": "Дмитрий",
     "last_name": "",
-    "email": "",
+    "email": "mail@mail.ru",
     "is_staff": true,
     "is_active": true,
     "date_joined": "2024-10-26T10:16:11Z",
@@ -851,12 +929,12 @@
   "pk": 3,
   "fields": {
     "password": "pbkdf2_sha256$870000$jO3LNeNKxbvTe0lubIuuPx$J8YbHFYYEtunW5QUWMgdKukJHHojiHruGEAZOhr206U=",
-    "last_login": "2024-10-30T10:13:58Z",
+    "last_login": "2024-11-03T13:39:00.482Z",
     "is_superuser": false,
     "username": "admin1",
     "first_name": "Виталий",
     "last_name": "",
-    "email": "",
+    "email": "mail@gmail.com",
     "is_staff": true,
     "is_active": true,
     "date_joined": "2024-10-30T10:11:36Z",
@@ -866,36 +944,18 @@
 },
 {
   "model": "auth.user",
-  "pk": 4,
+  "pk": 7,
   "fields": {
-    "password": "pbkdf2_sha256$870000$GGxXe12EuTubuPlYEe2D6d$JqlrXezqyZNj5egJrFK1x0MdZ773o6kAUbFwfDTGuQc=",
-    "last_login": "2024-10-31T12:53:47.199Z",
+    "password": "pbkdf2_sha256$870000$6vH8jRNdbVeAvOB0Of47Ts$HyGYiO//mpr5zYYitaAM+zE+A6DpIovAR1CtHx85/04=",
+    "last_login": "2024-11-02T10:27:38.477Z",
     "is_superuser": false,
-    "username": "admin3",
-    "first_name": "Валерчик",
+    "username": "admin6",
+    "first_name": "Admin",
     "last_name": "",
     "email": "",
     "is_staff": false,
     "is_active": true,
-    "date_joined": "2024-10-31T12:51:55.361Z",
-    "groups": [],
-    "user_permissions": []
-  }
-},
-{
-  "model": "auth.user",
-  "pk": 5,
-  "fields": {
-    "password": "pbkdf2_sha256$870000$2jGyAOt4FbASH5JjiaOEgs$nYRqFNqVtDuVlAuWyZLYfV489PgHo2oDJnTZpTehXVI=",
-    "last_login": "2024-10-31T14:17:41.127Z",
-    "is_superuser": false,
-    "username": "admin4",
-    "first_name": "Петр",
-    "last_name": "",
-    "email": "",
-    "is_staff": false,
-    "is_active": true,
-    "date_joined": "2024-10-31T14:15:43.432Z",
+    "date_joined": "2024-11-02T10:27:26.954Z",
     "groups": [],
     "user_permissions": []
   }
@@ -982,10 +1042,18 @@
 },
 {
   "model": "sessions.session",
-  "pk": "c2k7cgzw6q4d61jida45mvnoy3d6jrmn",
+  "pk": "5kv8zqm7c2fz6z24a9p15vpz61x2pn0y",
   "fields": {
-    "session_data": ".eJxVjEEOgjAQRe_StWlappTi0j1naGY6U4saSCisjHcXEha6_e-9_1YRt7XErcoSR1ZX1ajL70aYnjIdgB843Wed5mldRtKHok9a9TCzvG6n-3dQsJa9DmA99t46nxMacS1BS9kKUDCmzSwQMjvTGRLCXW2cA-wImK2kzvfq8wXhoDgf:1t6pB5:uUvcGxcgeATgb5C-50KvyXdSE3pLy4-UF_Or36wjafM",
-    "expire_date": "2024-11-15T10:46:51.192Z"
+    "session_data": "e30:1t7WQQ:FlAvGnuWiX6d5Uy7ZXSmcKH9_5RvdPDn7V45qfW3Xy4",
+    "expire_date": "2024-11-17T08:57:34.408Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "91dmoqhuv7hy0uobr62atf1notnfs1t3",
+  "fields": {
+    "session_data": "e30:1t7VeO:-vgFXmWkOOOLbeNx69FQV2fBFev41WwViRBwIZh1Ouw",
+    "expire_date": "2024-11-17T08:07:56.910Z"
   }
 },
 {
@@ -998,10 +1066,66 @@
 },
 {
   "model": "sessions.session",
+  "pk": "h30oqzwskwuvgqk3zx8avo81ksp5g27u",
+  "fields": {
+    "session_data": "e30:1t7WRJ:sAWtY_N0eW9H3iypSGzIXyWCy_J4Mo5OMlZWm0SgloI",
+    "expire_date": "2024-11-17T08:58:29.287Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "h4gagr1ptjb17qss21gkiyv3727a466z",
+  "fields": {
+    "session_data": "e30:1t7WWQ:nMyYTeS8_16c-iIclTmYKhw8kVZm9kHKknI_iZp3qxM",
+    "expire_date": "2024-11-17T09:03:46.547Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "lskfmyzq3h2egt7bnj0uo63p90iw70m0",
+  "fields": {
+    "session_data": ".eJxVjEsOAiEQBe_C2pCWj4BL956BdNMgowaSYWZlvLtOMgvdvqp6LxFxXWpcR57jxOIstDj8boTpkdsG-I7t1mXqbZknkpsidzrktXN-Xnb376DiqN_aaADypIxFU5witAGOJwLlyFpUAJmBXQk-uWItZA-IFBIHQk46ZfH-AM5ROEc:1t7aom:cTGqn9fnO6uVveEHNzvBjdGXn4dP8G1mcUC-MiyF7R4",
+    "expire_date": "2024-11-17T13:39:00.913Z"
+  }
+},
+{
+  "model": "sessions.session",
   "pk": "o89o77z6fdhjdg4w0p75ge9npav2l5k4",
   "fields": {
     "session_data": ".eJxVjEEOwiAQRe_C2hCGhgFcuvcMZBhAqgaS0q6Md9cmXej2v_f-SwTa1hq2kZcwJ3EWIE6_WyR-5LaDdKd265J7W5c5yl2RBx3y2lN-Xg7376DSqN86FtY5Z1O8ddpaPXlARGIz2QkSQkrslCejwFnLEbCgirEY7QgYUYn3B98RN3o:1t4lbe:CmZGiKBy5bU4DPTns77BWYc-mLnBG5ODxbcqjG8MXjo",
     "expire_date": "2024-11-09T18:33:46.736Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "p1e66vw48ofu6fr0hray2ruvs3czwr4s",
+  "fields": {
+    "session_data": "e30:1t7WT1:mhMRW8wEO6imd5qUnBLE5MWjbG1-iZD-yMWd420Ob1A",
+    "expire_date": "2024-11-17T09:00:15.341Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "pc2ratpagjw5uyx097yqyj438vuhc256",
+  "fields": {
+    "session_data": "e30:1t7WRS:fq622tLhvsTDrCmL0XWqqXJebvjAL9SzsHKmtwqSPBA",
+    "expire_date": "2024-11-17T08:58:38.641Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "sk75kvt4ae7gw5l4np97rpxjsdg1n4n1",
+  "fields": {
+    "session_data": "e30:1t7Xlt:e2vMISkvClX4YMq8-TKSALX9Cm0jksJchEdmRqeAP4o",
+    "expire_date": "2024-11-17T10:23:49.112Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "t3nbnxhqqxz6hds6rn8sf91fkendrzd0",
+  "fields": {
+    "session_data": "e30:1t7WST:gPfbaV7W48whNNPoK4uXGZsChMX7OkLHvggRIucJYc0",
+    "expire_date": "2024-11-17T08:59:41.165Z"
   }
 },
 {
@@ -1012,24 +1136,38 @@
     "title": "Поход в кинотеатр",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ornare erat eu lacus tristique consectetur. Nam vel vestibulum nisi, id viverra ante. Nunc finibus velit sit amet pharetra consequat. Phasellus feugiat iaculis nunc, ut posuere tellus vulputate eu. Aenean iaculis elit arcu, nec dignissim nisl rutrum vitae. Proin mattis blandit sagittis. Curabitur dolor lectus, molestie sit amet mi nec, vestibulum scelerisque est. Phasellus dignissim porttitor metus, id condimentum urna vulputate quis. Nulla et posuere ipsum, at varius nibh.\r\n\r\nFusce ornare commodo sem non tincidunt. In pharetra, lorem dictum ornare dignissim, ex magna elementum tortor, non tempus erat nibh ac neque. Nam aliquam, tellus at luctus ultricies, mi elit sodales mi, ac vulputate elit sapien non massa. Sed sit amet sem eget est tristique pulvinar. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse et neque arcu. Nullam volutpat elementum fringilla. Curabitur imperdiet tristique nibh, ac imperdiet diam dignissim sit amet. Quisque vel urna semper, ultrices risus quis, pharetra mi. Suspendisse volutpat nisl mi, vitae sodales libero molestie eget. Donec egestas euismod euismod. Suspendisse a ante at mauris facilisis luctus finibus nec ligula.\r\n\r\nAenean lobortis, risus ac placerat dictum, nulla metus accumsan ipsum, at blandit metus sem vel neque. Suspendisse in ante in turpis convallis egestas. Vivamus est orci, rutrum sed varius quis, lobortis vel odio. Integer arcu augue, semper a massa sed, hendrerit commodo felis. Fusce nec purus finibus, tincidunt arcu ut, consequat quam. Donec rhoncus metus euismod urna lacinia, at pretium libero dignissim. Curabitur eget congue ante.\r\n\r\nDuis quis commodo tortor. Curabitur elementum condimentum lectus, et faucibus magna tristique eu. Sed dui magna, faucibus ac mattis eu, cursus sed ligula. Fusce in congue massa. Cras non est nec mauris elementum pharetra. In venenatis sagittis sollicitudin. Pellentesque suscipit, lacus ac placerat vehicula, mi tellus semper tellus, sit amet laoreet justo ex nec metus. Aliquam quis viverra purus. Ut et erat ut turpis tempor tincidunt. Donec iaculis turpis nec ipsum varius placerat. Maecenas consequat pharetra massa. Quisque lacus sem, faucibus nec lacus nec, fermentum cursus erat. Donec pellentesque purus quis lectus sodales rhoncus. Vivamus nec odio ut justo porta mattis. Integer mollis elementum lectus sed convallis. Lorem ipsum dolor sit amet, consectetur adipiscing elit.\r\n\r\nInteger eget libero sit amet urna auctor lobortis. Maecenas commodo pharetra ipsum id placerat. Suspendisse bibendum lobortis bibendum. Donec fringilla auctor lorem, eget varius ante vehicula sit amet. Aliquam euismod iaculis ex sit amet pharetra. Integer quis malesuada neque. In id justo ut lectus luctus porttitor. Phasellus vehicula odio ante, quis fringilla orci tincidunt eu. Fusce pretium leo quis orci maximus, et accumsan lorem mattis. Curabitur augue diam, hendrerit eget ex id, volutpat egestas ligula. Nunc in ullamcorper massa. Vestibulum ac lobortis nisi.",
     "location": "Москва, г.Зеленоград",
-    "date": "2025-09-26",
-    "time": "16:00:00",
-    "max_participants": 12,
+    "date": "2025-09-29",
+    "time": "17:30:00",
+    "max_participants": 4,
     "bg_image": "event_images/1683553302_2044958_import-url.png"
   }
 },
 {
-  "model": "events.booking",
-  "pk": 22,
+  "model": "events.event",
+  "pk": 15,
   "fields": {
-    "user": 3,
-    "event": 13,
+    "organizer": 1,
+    "title": "Test",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ultricies tellus nunc, sed rutrum ligula pretium id. Nam eget accumsan enim. Vivamus feugiat sed turpis vitae lacinia. In ut leo sit amet arcu porttitor elementum. Vivamus varius magna eu risus laoreet gravida. Suspendisse volutpat sed justo ut faucibus. Ut tempor, dui ac aliquet euismod, tellus magna viverra ante, eu euismod felis dui eget neque. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum placerat in velit ac aliquet. Nulla semper lacus in tellus mollis placerat.\r\n\r\nNam eget varius nisl. In rutrum euismod semper. Vestibulum dolor lorem, elementum tempus lorem a, ornare pulvinar ex. Proin lacus velit, lobortis ac elit vitae, rutrum pretium dui. Integer tincidunt rutrum convallis. Vestibulum est eros, auctor nec lorem eu, pharetra rhoncus orci. Vivamus dignissim ac quam in convallis. Cras vel erat commodo, maximus nunc eu, faucibus dolor. Ut aliquet nibh vel dignissim finibus. Vestibulum efficitur sem quam, ut bibendum mi maximus et. Nullam et mollis lectus, non dapibus risus. Nullam nulla tellus, dictum et efficitur nec, fermentum et ante. Sed dictum euismod elit, id viverra nibh faucibus et. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.\r\n\r\nNulla tincidunt vitae massa volutpat faucibus. In commodo nisl eget sem auctor tincidunt. Proin tempor, neque eu aliquet porta, orci purus efficitur arcu, a suscipit felis ipsum scelerisque turpis. Pellentesque bibendum ornare fermentum. Praesent ornare libero ac felis feugiat, non volutpat arcu convallis. Sed vitae varius nulla, sit amet molestie mauris. Maecenas ut aliquet ex, vel viverra tortor. Nam aliquam elementum nisi ac scelerisque. Nunc scelerisque ut risus eu convallis. Etiam in pulvinar urna, eu tempor mauris. Nam auctor erat et augue tempus pellentesque. Curabitur volutpat eu dolor eget malesuada. In nec tellus dolor.\r\n\r\nMaecenas commodo mollis magna, vitae hendrerit est consectetur ac. Quisque ligula orci, interdum a porttitor et, porta in odio. Nulla facilisi. Aliquam vitae ante convallis, luctus leo at, varius odio. Aliquam nec diam semper, laoreet sapien at, lacinia sapien. Maecenas in sagittis mauris. Pellentesque ac interdum mi. Aliquam consectetur ex ut orci fringilla rhoncus. Aliquam et auctor metus, quis ultrices felis.\r\n\r\nPellentesque nec accumsan enim. Phasellus vulputate felis non tempus finibus. Aliquam convallis diam eu porta semper. Donec vulputate mi non est viverra lacinia. Proin interdum eu odio quis tempor. Curabitur facilisis ex sit amet rutrum fringilla. In mattis vehicula orci, a aliquet justo viverra quis. Donec malesuada lectus in tristique feugiat.",
+    "location": "moscow",
+    "date": "2025-02-23",
+    "time": "14:00:00",
+    "max_participants": 2,
+    "bg_image": "event_images/301d336640499c9ee4dfc6b91db35485.jpg"
+  }
+},
+{
+  "model": "events.booking",
+  "pk": 27,
+  "fields": {
+    "user": 2,
+    "event": 15,
     "status": "Registered"
   }
 },
 {
   "model": "events.booking",
-  "pk": 23,
+  "pk": 30,
   "fields": {
     "user": 2,
     "event": 13,
@@ -1038,9 +1176,9 @@
 },
 {
   "model": "events.booking",
-  "pk": 24,
+  "pk": 32,
   "fields": {
-    "user": 4,
+    "user": 3,
     "event": 13,
     "status": "Registered"
   }
@@ -1071,7 +1209,7 @@
   "model": "reviews.review",
   "pk": 16,
   "fields": {
-    "user": 4,
+    "user": null,
     "event": 13,
     "rating": 4.0,
     "comment": "Идите все!",
@@ -1079,13 +1217,25 @@
   }
 },
 {
+  "model": "reviews.review",
+  "pk": 18,
+  "fields": {
+    "user": null,
+    "event": 15,
+    "rating": 4.0,
+    "comment": "Всем хай",
+    "created_at": "2024-11-02T10:06:54.464Z"
+  }
+},
+{
   "model": "users.userprofile",
   "pk": 3,
   "fields": {
     "user": 1,
-    "profile_picture": "profile_images/default.jpg",
+    "profile_picture": "media/profile_images/admin/4514083932c76a24f52634585caadcc3_yfKZGTP.jpg",
     "is_organizer": true,
-    "bio": ""
+    "bio": "",
+    "email": "arkhipka27@gmail.com"
   }
 },
 {
@@ -1093,9 +1243,10 @@
   "pk": 4,
   "fields": {
     "user": 2,
-    "profile_picture": "profile_images/default.jpg",
+    "profile_picture": "media/profile_images/um8rell4/загруженное.jpeg",
     "is_organizer": true,
-    "bio": ""
+    "bio": "",
+    "email": "mail@mail.ru"
   }
 },
 {
@@ -1103,29 +1254,21 @@
   "pk": 5,
   "fields": {
     "user": 3,
-    "profile_picture": "profile_images/default.jpg",
+    "profile_picture": "media/profile_images/admin1/1571178269_preview_Hg5f7Td.png",
     "is_organizer": false,
-    "bio": ""
+    "bio": "",
+    "email": "mail@gmail.com"
   }
 },
 {
   "model": "users.userprofile",
-  "pk": 6,
+  "pk": 8,
   "fields": {
-    "user": 4,
+    "user": 7,
     "profile_picture": "profile_images/default.jpg",
     "is_organizer": false,
-    "bio": ""
-  }
-},
-{
-  "model": "users.userprofile",
-  "pk": 7,
-  "fields": {
-    "user": 5,
-    "profile_picture": "profile_images/default.jpg",
-    "is_organizer": false,
-    "bio": ""
+    "bio": "",
+    "email": ""
   }
 }
 ]
