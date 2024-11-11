@@ -27,6 +27,9 @@
               width="40" height="40">
           </a>
           <ul class="dropdown-menu dropdown-menu-end">
+            {% if is_organizer %}
+              <li><a class="dropdown-item" href="{% url 'users:organizers:index' %}">Организатор-панель</a></li>
+            {% endif %}
             <li><a class="dropdown-item" href="{% url 'users:user_profile' request.user %}">Просмотр профиля</a></li>
             <li><a class="dropdown-item" href="{% url 'users:user_profile_edit' %}">Настройки профиля</a></li>
             <li><a class="dropdown-item" href="">Записи на мероприятия</a></li>

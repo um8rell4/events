@@ -1,0 +1,34 @@
+<!-- Отзывы -->
+<h4 class="mt-4">Отзывы</h4>
+{% for review in event.review_set.all %}
+<div class="review-section border rounded p-3 mb-3">
+    <div class="d-flex justify-content-between align-items-center">
+        <h5>{{ review.user.first_name }} <span class="text-warning">{{ review.rating }} ★</span></h5>
+        <p class="text-muted"><small>Оставлен: {{ review.created_at|date:"d M Y, H:i" }}</small></p>
+    </div>
+    <p>{{ review.comment }}</p>
+    <!-- Публикация отзыва -->
+
+
+
+
+
+
+
+
+
+
+    <div class="d-flex justify-content-end">
+        {% if not review.is_published %}
+            <form method="post" action="{% url 'users:organizers:publish' review.id %}">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-outline-primary btn-sm">Опубликовать</button>
+            </form>
+        {% else %}
+            <span class="text-success">Отзыв опубликован</span>
+        {% endif %}
+    </div>
+</div>
+{% empty %}
+    <p class="text-muted">Отзывов пока нет</p>
+{% endfor %}

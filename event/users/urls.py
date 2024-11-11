@@ -11,4 +11,5 @@ urlpatterns = [
     path('profile/<str:username>', user_profile, name='user_profile'),
     path('profile/edit/', user_profile_edit, name='user_profile_edit'),
     path('profile/delete/', delete_profile, name='delete_profile'),
+    path('organizer/', include(('organizers.urls', 'organizers'), namespace='organizers'))
 ]

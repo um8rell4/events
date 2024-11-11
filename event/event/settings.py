@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'reviews',
     'users',
     'django_bootstrap5',
+    'organizers',
 ]
 
 MIDDLEWARE = [

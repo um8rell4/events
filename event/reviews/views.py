@@ -10,7 +10,7 @@ def event_reviews(request, pk):
     # Получаем мероприятие по первичному ключу (pk)
     event = get_object_or_404(Event, pk=pk)
     # Оптимизируем запрос с использованием select_related для извлечения User
-    reviews = Review.objects.filter(event=event)
+    reviews = Review.objects.filter(event=event, is_published=True)
 
     access = False  # Изначально доступ закрыт
 
@@ -85,7 +85,7 @@ def reviews_comment_denied(request, pk):
 
 
 def reviews(request):
-    events_reviews = Review.objects.all()
+    events_reviews = Review.objects.filter(is_published=True)
     return render(request, 'review/reviews.html', {'reviews': events_reviews})
 
 

@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container mt-5">
+    <h1 class="text-center mb-5">Панель Организатора</h1>
+    <!-- Перебираем все события, которые создал организатор -->
+        <div class="card mb-4 shadow-sm">
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <h2>{{ event.title }}</h2>
+                <span class="badge bg-primary">{{ event.date|date:"d M Y" }}</span>
+            </div>
+            <div class="card-body">
+                <p class="card-text"><strong>Описание события:</strong> {{ event.description }}</p>
+                <p class="card-text"><strong>Место:</strong> {{ event.location }}</p>
+
+                <!-- Участники -->
+                <h4 class="mt-4">Записавшиеся участники</h4>
+                <ul class="list-group">
+                    {% for booking in event.booking_set.all %}
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                          <a href="{% url 'users:user_profile' booking.user.username %}" class="link-body-emphasis link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0">{{ booking.user.username }}</a>
+                            <span class="badge bg-success">{{ booking.user.email }}</span>
+                        </li>
+                    {% empty %}
+                        <li class="list-group-item text-muted">Пока что участников нет</li>
+                    {% endfor %}
+                </ul>
+                {% include 'organizers/include/reviews.html' %}
+
+            </div>
+        </div>
+</div>
+{% endblock %}

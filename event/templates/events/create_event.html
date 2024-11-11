@@ -2,8 +2,8 @@
 {% block content %}
 <div class="info-block">
         <form method="post" enctype="multipart/form-data">
-        {% csrf_token %}
-        {{ form.as_p }}
+            {% csrf_token %}
+            {{ form.as_p }}
         <button type="submit" class="btn btn-primary mb-3">Создать</button>
     </form>
 </div>

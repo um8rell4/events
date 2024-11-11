@@ -54,6 +54,7 @@ class EditUserProfileForm(forms.ModelForm):
 
     def clean_email(self):
         email = self.cleaned_data['email']
-        if UserProfile.objects.filter(email=email).exists():
-            raise ValidationError("Email already exists!")
+        user_id = self.instance.user.id
+        if UserProfile.objects.filter(email=email).exclude(user_id=user_id).exists():
+            raise ValidationError("Почта уже зарегистрирована.")
         return email

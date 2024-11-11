@@ -18,8 +18,9 @@ class Review(models.Model):
     user = models.ForeignKey(
         User,
         null=True,
-        on_delete=models.SET_NULL,
-        verbose_name='Пользователь'
+        on_delete=models.SET_DEFAULT,
+        verbose_name='Пользователь',
+        default='Удаленный пользователь',
     )
     event = models.ForeignKey(Event, on_delete=models.CASCADE, verbose_name='Мероприятие')
 
@@ -27,8 +28,9 @@ class Review(models.Model):
                                verbose_name="Rating")
     comment = models.TextField(max_length=1500, verbose_name="Комментарий")
     created_at = models.DateTimeField(auto_now_add=True)
+    is_published = models.BooleanField(default=False)
 
     class Meta:
-        ordering = ['-created_at', '-rating']
+        ordering = ['is_published', '-created_at', '-rating']
         verbose_name = 'Отзыв'
         verbose_name_plural = 'Отзывы'

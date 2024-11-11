@@ -7,11 +7,13 @@ from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 from django.forms.models import model_to_dict
 from reviews.models import Review
-from django.db.models import Avg
+from django.db.models import Avg, Q, FloatField
 
 
 def events(request):
-    elements = Event.objects.all().annotate(avg_rating=Avg('review__rating'))
+    elements = Event.objects.all().annotate(
+        avg_rating=Avg('review__rating', filter=Q(review__is_published=True), output_field=FloatField())
+    )
     return render(
         request,
         'events/events.html', {
@@ -24,7 +26,7 @@ def event_detail(request, pk):
     event = get_object_or_404(Event, pk=pk)
     organizer = get_object_or_404(User, username=event.organizer)
     organizer_profile = UserProfile.objects.get(user=organizer)
-    rating = Review.objects.filter(event=event.pk).aggregate(Avg("rating", default=0))
+    rating = Review.objects.filter(event=event.pk, is_published=True).aggregate(Avg("rating", default=0))
     #Количество записанных на мероприятие человек
 
     registered_persons = Booking.objects.filter(event=event).count()

@@ -4,6 +4,7 @@ from django.urls import reverse
 
 
 class Event(models.Model):
+
     organizer = models.ForeignKey(User, on_delete=models.CASCADE)
 
     title = models.CharField(max_length=40, verbose_name='Название ивента')
