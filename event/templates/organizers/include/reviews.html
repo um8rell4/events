@@ -7,26 +7,25 @@
         <p class="text-muted"><small>Оставлен: {{ review.created_at|date:"d M Y, H:i" }}</small></p>
     </div>
     <p>{{ review.comment }}</p>
+
+
+
     <!-- Публикация отзыва -->
-
-
-
-
-
-
-
-
-
 
     <div class="d-flex justify-content-end">
         {% if not review.is_published %}
             <form method="post" action="{% url 'users:organizers:publish' review.id %}">
                 {% csrf_token %}
-                <button type="submit" class="btn btn-outline-primary btn-sm">Опубликовать</button>
+                <button type="submit" class="m-2 btn btn-outline-primary btn-sm">Опубликовать</button>
             </form>
+
         {% else %}
-            <span class="text-success">Отзыв опубликован</span>
+            <span class="text-success m-2">Отзыв опубликован</span>
         {% endif %}
+         <form method="post" action="{% url 'users:organizers:delete' review.id %}">
+                {% csrf_token %}
+                <button type="submit" class="m-2 btn btn-outline-danger btn-sm">Удалить</button>
+            </form>
     </div>
 </div>
 {% empty %}

@@ -12,6 +12,19 @@
                 <p class="card-text"><strong>Описание события:</strong> {{ event.description }}</p>
                 <p class="card-text"><strong>Место:</strong> {{ event.location }}</p>
 
+
+<div class="mb-4">
+        <div class="card-body">
+            <form method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <!-- Кнопка отправки -->
+                <button type="submit" class="btn btn-primary">Сохранить статус</button>
+            </form>
+        </div>
+    </div>
+
+
                 <!-- Участники -->
                 <h4 class="mt-4">Записавшиеся участники</h4>
                 <ul class="list-group">

@@ -8,6 +8,8 @@
             <p class="card-text"><strong>Описание события:</strong> {{ event.description|truncatewords:"100" }}</p>
             <p class="card-text"><strong>Место:</strong> {{ event.location }}</p>
 
+            {{ form.as_p }}
+
             <!-- Участники -->
             <h4 class="mt-4">Записавшиеся участники</h4>
             <ul class="list-group">
